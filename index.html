@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de Login -->
+  <section id="tela-login" class="tela">
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Usuário">
+      <input type="password" placeholder="Senha">
+      <button type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <!-- Tela de Menu -->
+  <section id="tela-menu" class="tela">
+    <h2>Menu Principal</h2>
+    <button onclick="mostrarTela('tela-cadastro')">Cadastrar</button>
+    <button onclick="mostrarTela('tela-listar')">Listar</button>
+    <button onclick="mostrarTela('tela-atualizar')">Atualizar</button>
+    <button onclick="mostrarTela('tela-excluir')">Excluir</button>
+  </section>
+
+  <!-- Tela de Cadastro -->
+  <section id="tela-cadastro" class="tela">
+    <h2>Cadastro</h2>
+    <form>
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Curso">
+      <button type="submit">Salvar</button>
+    </form>
+  </section>
+
+  <!-- Tela de Sucesso -->
+  <section id="tela-sucesso" class="tela">
+    <h2>Cadastro realizado com sucesso!</h2>
+    <button onclick="mostrarTela('tela-menu')">Voltar ao Menu</button>
+  </section>
+
+  <!-- Tela de Atualizar -->
+  <section id="tela-atualizar" class="tela">
+    <h2>Atualizar Cadastro</h2>
+    <form>
+      <input type="text" placeholder="ID do Aluno">
+      <input type="text" placeholder="Novo Nome">
+      <input type="email" placeholder="Novo Email">
+      <input type="text" placeholder="Novo Curso">
+      <button type="submit">Atualizar</button>
+    </form>
+  </section>
+
+  <!-- Tela de Exclusão -->
+  <section id="tela-excluir" class="tela">
+    <h2>Excluir Cadastro</h2>
+    <form>
+      <input type="text" placeholder="ID do Aluno">
+      <button type="submit">Excluir</button>
+    </form>
+  </section>
+
+  <!-- Tela de Listagem -->
+  <section id="tela-listar" class="tela">
+    <h2>Lista de Alunos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Curso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>João</td>
+          <td>joao@email.com</td>
+          <td>Engenharia</td>
+        </tr>
+        <!-- outros registros -->
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
