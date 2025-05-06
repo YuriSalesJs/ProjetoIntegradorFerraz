@@ -10,6 +10,18 @@
     position: fixed;
     width: 100%;
   }
+
+body {
+  background-color: #b1aaaa; 
+  margin: 0;
+}
+
+main {
+  background-color: #b1aaaa;
+  padding: 80px 20px 60px;
+  min-height: calc(100vh - 140px);
+}
+ 
   
   .logo img {
     height: 50px;
@@ -47,3 +59,59 @@
     color: #ccc;
     text-align: center;
   }
+
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card .empresa {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .card a {
+    align-self: flex-start;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .card a:hover {
+    background-color: #0056b3;
+  }
+  
