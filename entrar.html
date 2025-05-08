@@ -2,46 +2,70 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar – Ferraz Conecta</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
-    <div class="logo">
-      <img src="imagens/cropped-LOGO_FERRAZ-2048x845.png" alt="Logo">
-    </div>
-    <div class="site-name">Nome do Site</div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="cadastrar.html">Cadastrar</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="empresas.html">Empresas</a>
+    <a href="https://ferrazdevasconcelos.sp.gov.br/web/" target="_blank" rel="noopener" class="logo">
+      <img src="imagens/cropped-LOGO_FERRAZ-2048x845.png" alt="Prefeitura de Ferraz de Vasconcelos" height="50">
+    </a>
+    <h1 class="site-name">Ferraz Conecta</h1>
+    <nav class="nav-links" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cadastrar.html">Cadastrar</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="empresas.html">Empresas</a></li>
+      </ul>
     </nav>
   </header>
+
   <main>
-    <form action="#" method="post">
-      <h2>Login</h2>
+    <div class="form-container">
+      <div class="form-card">
+        <h2>Digite seu e-mail</h2>
+        <p class="form-subtitle">Continuar para Ferraz Conecta</p>
 
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" placeholder="Digite seu e-mail" class="form-input">
+
+        <button class="btn btn-primary">Entrar na sua conta ou criar uma</button>
+
+        <div class="divider"><span>ou</span></div>
+
+        <button class="btn btn-social">
+          <img src="imagens/google-icon.svg" alt="" class="icon"> Continuar com Google
+        </button>
+        <button class="btn btn-social">
+          <img src="imagens/apple-icon.svg" alt="" class="icon"> Continuar com Apple
+        </button>
+
+        <p class="form-legal">
+          Ao continuar, você declara que concorda com os
+          <a href="#">Termos do serviço</a> e com a
+          <a href="#">Política de privacidade</a>.
+        </p>
       </div>
-
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
-      </div>
-
-      <div class="form-group" style="text-align: right; font-size: 0.9rem;">
-        <a href="#" class="link">Esqueci minha senha</a>
-      </div>
-
-      <button type="submit">Entrar</button>
-    </form>
+    </div>
   </main>
-  <footer>
-    <p>Ferraz Conecta - Rua Pedro Foschini, 200 - Vila Romanópolis – Ferraz de Vasconcelos-SP </p>
-</footer>
+
+  <footer class="rodape" role="contentinfo">
+    <div class="rodape-div">
+      <address class="footer-contact">
+        <img src="imagens/cropped-LOGO_FERRAZ-2048x845.png" alt="Logo Ferraz" class="logo_f" width="100">
+        <p>Rua Pedro Foschini, 200 – Vila Romanópolis<br>Ferraz de Vasconcelos – SP</p>
+      </address>
+      <nav class="footer-nav" aria-label="Links úteis">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cadastrar.html">Cadastrar</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="empresas.html">Empresas</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="rodape-direitos">© 2025 Prefeitura de Ferraz de Vasconcelos — Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
