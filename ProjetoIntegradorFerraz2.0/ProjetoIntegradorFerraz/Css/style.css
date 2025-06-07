@@ -107,6 +107,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease;
+  margin-bottom: 15px;
 }
 
 .card:hover {
