@@ -15,5 +15,6 @@
     </div>
     <p class="rodape-direitos">© 2025 Prefeitura de Ferraz de Vasconcelos — Todos os direitos reservados.</p>
   </footer>
+  <script src="../js/theme.js"></script>
 </body>
 </html>
