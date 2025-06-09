@@ -63,7 +63,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                     <li><strong>Salário:</strong> <?php echo htmlspecialchars($vaga['salario']); ?></li>
                                     <li><strong>Localização:</strong> <?php echo htmlspecialchars($vaga['localizacao']); ?></li>
                                 </ul>
-                                <a href='detalhes_vaga.php?id=<?php echo $vaga['id']; ?>' class='btn'>Ver Detalhes</a>
+                                <a href='detalhes_vaga.php?id=<?php echo $vaga['id']; ?>' class='btn btn-primary'>Ver Detalhes</a>
                             </article>
                         <?php endforeach; ?>
                     </div>

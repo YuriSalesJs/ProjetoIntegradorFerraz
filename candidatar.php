@@ -2,22 +2,21 @@
 session_start();
 include "database.php";
 
-// 1. Verifica se o usuário está logado
-if (!isset($_SESSION['id'])) {
-    // Se não estiver logado, redireciona para a página de login
+
+// Se não estiver logado ou for uma empresa, redireciona para a página de login de candidato.
+if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] != 'candidato') {
     header('Location: entrar.php?erro=login_necessario');
     exit();
 }
 
 // 2. Verifica se o ID da vaga foi enviado pela URL
 if (!isset($_GET['id_vaga']) || !is_numeric($_GET['id_vaga'])) {
-    // Se não, redireciona para a página inicial com erro
     header('Location: index.php?status=vaga_invalida');
     exit();
 }
 
-// 3. Coleta os IDs
-$id_usuario = $_SESSION['id'];
+// 3. Coleta o ID do usuário da variável de sessão correta
+$id_usuario = $_SESSION['id_usuario'];
 $id_vaga = $_GET['id_vaga'];
 
 // 4. VERIFICA SE O USUÁRIO JÁ SE CANDIDATOU A ESTA VAGA

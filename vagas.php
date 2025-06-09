@@ -25,7 +25,7 @@
                     echo "<li><strong>Localização:</strong> " . htmlspecialchars($vaga['localizacao']) . "</li>";
                     echo "<li><strong>Sexo:</strong> " . htmlspecialchars($vaga['sexo']) . "</li>";
                     echo "</ul>";
-                    echo "<a href='detalhes_vaga.php?id=" . $vaga['id'] . "' class='btn'>Ver mais</a>";
+                    echo "<a href='detalhes_vaga.php?id=" . $vaga['id'] . "' class='btn btn-primary'>Ver mais</a>";
                     echo "</article>";
                 }
 

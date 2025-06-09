@@ -28,11 +28,11 @@
                     echo "<li><strong>Salário:</strong> " . htmlspecialchars($vaga['salario']) . "</li>";
                     echo "<li><strong>Experiência:</strong> " . htmlspecialchars($vaga['exp']) . "</li>";
                     echo "<li><strong>Escolaridade:</strong> " . htmlspecialchars($vaga['escolaridade']) . "</li>";
-                    echo "<li><strong>Idade:</strong> " . htmlspecialchars($vaga['idade']) . "</li>";
+                   
                     echo "<li><strong>Localização:</strong> " . htmlspecialchars($vaga['localizacao']) . "</li>";
                     
                     echo "</ul>";
-                    echo "<a href='detalhes_vaga.php?id=" . $vaga['id'] . "' class='btn'>Ver mais</a>";
+                    echo "<a href='detalhes_vaga.php?id=" . $vaga['id'] . "' class='btn btn-primary'>Ver mais</a>";
                     echo "</article>";
                 }
 

@@ -26,7 +26,7 @@
                 echo "<li><strong>E-mail:</strong> " . htmlspecialchars($empresa['email_contato']) . "</li>";
                 echo "</ul>";
                 // O link agora leva para uma futura página de detalhes da empresa
-                echo "<a href='detalhes_empresa.php?id=" . $empresa['id'] . "' class='btn'>Ver Perfil</a>";
+                echo "<a href='detalhes_empresa.php?id=" . $empresa['id'] . "' class='btn btn-primary'>Ver Perfil</a>";
                 echo "</article>";
             }
 
