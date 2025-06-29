@@ -2,6 +2,13 @@
   <main>
     <div class="form-container">
       <div class="form-card">
+
+        <?php if(isset($_GET['status']) && $_GET['status'] == 'erro_cadastro'): ?>
+            <div class="alert alert-danger">
+                 Ocorreu uma falha ao realizar o cadastro. É possível que este e-mail já esteja em uso. Tente novamente.
+            </div>
+        <?php endif; ?>
+
         <h2>Cadastro de Usuário</h2>
         <p class="form-subtitle">Abra sua conta grátis</p>
 

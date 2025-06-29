@@ -30,7 +30,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <?php if ($vaga): ?>
             
-            <div class="vaga-detalhe-card" style="background-color: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+            <div class="vaga-detalhe-card">
                 
                 <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;"><?php echo htmlspecialchars($vaga['titulo']); ?></h1>
                 <h2 style="font-weight: normal; font-size: 1.5rem; margin-top: -0.5rem; margin-bottom: 1.5rem; color: #555;"><?php echo htmlspecialchars($vaga['empresa_nome']); ?></h2>

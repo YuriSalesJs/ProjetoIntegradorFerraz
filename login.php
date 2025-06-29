@@ -10,10 +10,8 @@ $senha = $_POST['senha'];
 $sqlquery = mysqli_query($conexao, "SELECT * FROM cadastro WHERE email = '$email' AND senha = '$senha'");
 
 if (mysqli_num_rows($sqlquery) <= 0) {
-    echo "<script>
-        alert('Login inválido');
-        window.location.href = 'entrar.php';
-    </script>";
+    header('Location: entrar.php?status=login_invalido');
+    exit();
 } else {
     $dados = mysqli_fetch_assoc($sqlquery);
     
@@ -31,9 +29,7 @@ if (mysqli_num_rows($sqlquery) <= 0) {
     $_SESSION['nome_usuario'] = $dados['nome'];
     $_SESSION['tipo_usuario'] = 'candidato'; // A INFORMAÇÃO MAIS IMPORTANTE!
    
-    echo "<script>
-        alert('Login Bem-Sucedido');
-        window.location.href = 'index.php';
-    </script>";
+    header('Location: index.php');
+    exit();
 }
 ?>

@@ -39,7 +39,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <?php if ($empresa): // Se a empresa foi encontrada ?>
             
-            <div class="perfil-empresa-card" style="background-color: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+            <div class="perfil-empresa-card">
                 
                 <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;"><?php echo htmlspecialchars($empresa['nome_fantasia']); ?></h1>
                 <h2 style="font-weight: normal; font-size: 1.5rem; margin-top: -0.5rem; margin-bottom: 1.5rem; color: #555;"><?php echo htmlspecialchars($empresa['razao_social']); ?></h2>
@@ -48,7 +48,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
                 <h3 style="margin-top: 2rem;">Informações de Contato</h3>
                 <p><strong>Endereço:</strong> <?php echo htmlspecialchars($empresa['endereco']); ?></p>
-                <p><strong>E-mail:</strong> <?php echo htmlspecialchars($empresa['email_contato']); ?></p>
+                <p><strong>E-mail:</strong> <?php echo htmlspecialchars($empresa['email']); ?></p>
                 <p><strong>Telefone:</strong> <?php echo htmlspecialchars($empresa['telefone']); ?></p>
 
                 <h3 style="margin-top: 2rem;">Vagas Abertas Nesta Empresa</h3>

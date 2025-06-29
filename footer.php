@@ -1,8 +1,8 @@
 <footer class="rodape" role="contentinfo">
     <div class="rodape-div">
       <address class="footer-contact">
-        <img src="Img/cropped-LOGO_FERRAZ-2048x845.png" alt="Logo Ferraz" width="100" class="logo_f">
-        <p>Rua Pedro Foschini, 200 – Vila Romanópolis<br>Ferraz de Vasconcelos – SP</p>
+        <img src="Img/logo_azul.png" alt="Logo Ferraz" width="100" class="logo_f">
+        <p>Rua Carlos de Carvalho, 200 - Jardim Sao João<br>Ferraz de Vasconcelos – SP</p>
       </address>
       <nav class="footer-nav" aria-label="Links úteis">
         <ul>
@@ -13,7 +13,7 @@
         </ul>
       </nav>
     </div>
-    <p class="rodape-direitos">© 2025 Prefeitura de Ferraz de Vasconcelos — Todos os direitos reservados.</p>
+    <p class="rodape-direitos">© 2025 FATEC Ferraz de Vasconcelos — Todos os direitos reservados.</p>
 </footer>
 
 <script>
@@ -76,6 +76,7 @@
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
+
 
 </body>
 </html>

@@ -2,6 +2,11 @@
 <main>
     <div class="form-container">
       <div class="form-card" style="max-width: 600px;">
+
+        <?php if(isset($_GET['status']) && $_GET['status'] == 'erro_cadastro'): ?>
+            <div class="alert alert-danger">Ocorreu um erro. Verifique se o CNPJ ou e-mail já não estão em uso.</div>
+        <?php endif; ?>
+
         <h2>Cadastro de Empresa</h2>
         <p class="form-subtitle">Divulgue suas vagas e encontre os melhores talentos locais</p>
 
@@ -15,15 +20,9 @@
           <label for="ramo_atividade">Ramo de Atividade:</label>
           <input type="text" id="ramo_atividade" name="ramo_atividade" class="form-input">
 
-          <label for="email_contato">E-mail de Contato (Público):</label>
-          <input type="email" id="email_contato" name="email_contato" class="form-input" required>
+          <label for="email">E-mail (será usado para contato e login):</label>
+          <input type="email" id="email" name="email" class="form-input" required>
           
-          <hr style="margin: 1.5rem 0;">
-          <p class="form-subtitle" style="text-align:center;">Crie seus dados de acesso</p>
-
-          <label for="email_login">E-mail de Login (Privado):</label>
-          <input type="email" id="email_login" name="email_login" class="form-input" required>
-
           <label for="senha">Senha:</label>
           <input type="password" id="senha" name="senha" class="form-input" required>
 

@@ -13,14 +13,11 @@
     VALUES ('$nome', '$email', '$telefone', '$cpf', '$nascimento', '$senha')";
 
     if(mysqli_query($conexao,$sql)){
-        echo "<script>
-            alert('Cadastro realizado com sucesso!');
-            window.location.href = 'entrar.php'; // Redireciona para a página 'entrar.php'
-        </script>";
+        header('Location: entrar.php?status=cadastro_sucesso');
+    exit();
     } else {
-        echo "<script>
-            alert('Falha ao cadastrar no banco de dados.');
-        </script>";
+        header('Location: cadastrar.php?status=erro_cadastro');
+    exit();
     }
 
 ?>

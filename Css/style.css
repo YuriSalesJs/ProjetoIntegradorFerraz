@@ -79,12 +79,22 @@ body {
   z-index: 1000;
 }
 
-.logo_f{
-  width: 110px;
+.navbar .logo_f {
+  height: 100%;  /* O logo ocupará 100% da altura do .navbar-brand */
+  width: auto;   /* A largura se ajustará automaticamente */
 }
 
-.navbar-brand{
-  padding: 1px;
+.navbar-brand {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  /* Reduzimos o padding vertical para o logo poder ficar um pouco maior */
+  padding: 2px 15px; 
+}
+
+.rodape .logo_f {
+  width: 120px; /* Um tamanho de largura fixo e bom para o rodapé */
+  height: auto;  /* A altura se ajustará automaticamente */
 }
 
 .site-name {
@@ -512,4 +522,105 @@ body.dark-mode .detalhe-item:nth-child(odd) {
   .missao-visao-container {
     grid-template-columns: 1fr; /* Colunas ficam uma embaixo da outra */
   }
+}
+
+/* ======================================================= */
+/* Estilos para os Cards de Detalhe (Vaga e Empresa)       */
+/* ======================================================= */
+
+.vaga-detalhe-card,
+.perfil-empresa-card {
+  background-color: var(--cor-fundo-card-form);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--cor-sombra-card);
+}
+
+/* Ajuste de cor para os subtítulos que podem ter ficado cinzas */
+.vaga-detalhe-card h2,
+.perfil-empresa-card h2 {
+    color: var(--cor-texto-secundario);
+}
+
+/* ========================================= */
+/* Estilos para o Painel da Empresa          */
+/* ========================================= */
+
+.painel-header {
+  background-color: var(--cor-fundo-card-form); /* Usa a variável de cor */
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--cor-sombra-card);
+}
+
+.painel-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--cor-texto-principal);
+}
+
+.painel-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--cor-texto-secundario);
+}
+
+/* ========================================= */
+/* |||   ESTILOS PARA O CARROSSEL          ||| */
+/* ========================================= */
+
+.carousel {
+  /* Define uma altura máxima para o carrossel */
+  max-height: 350px;
+  overflow: hidden; /* Garante que a imagem não ultrapasse a altura */
+  margin-bottom: var(--gap); /* Adiciona um espaço abaixo do carrossel */
+}
+
+/* Faz com que a imagem cubra a área do slide sem distorcer */
+.carousel .item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* A mágica acontece aqui! */
+  object-position: center;
+}
+
+/* Adiciona um fundo escuro semi-transparente no texto para melhor legibilidade */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.estatisticas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.estatistica-item {
+  background-color: var(--cor-fundo-geral);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  flex-basis: 250px; /* Largura base de cada item */
+  flex-grow: 1; /* Permite que cresçam para ocupar espaço */
+}
+
+.estatistica-numero {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--cor-primaria-btn);
+  line-height: 1;
+}
+
+.estatistica-label {
+  font-size: 1.1rem;
+  color: var(--cor-texto-secundario);
+  margin-top: 0.5rem;
 }
