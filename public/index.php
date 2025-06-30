@@ -45,6 +45,7 @@ $router->get('/vagas/criar', 'VagaController@create');
 $router->post('/vagas/criar', 'VagaController@create');
 $router->post('/vagas/candidatar', 'VagaController@candidatar');
 $router->post('/vagas/desistir', 'VagaController@desistir');
+$router->post('/vagas/denunciar', 'VagaController@denunciar');
 $router->get('/vagas/{id}', 'VagaController@show');
 $router->get('/vagas/{id}/editar', 'VagaController@edit');
 $router->post('/vagas/{id}/editar', 'VagaController@edit');

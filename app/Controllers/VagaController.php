@@ -154,4 +154,41 @@ class VagaController extends Controller
         $this->vagaModel->delete($id);
         $this->redirect('/painel-empresa?status=vaga_excluida');
     }
+
+    public function denunciar()
+    {
+        if (!$this->isLoggedIn()) {
+            $this->redirect('/login');
+        }
+
+        if ($this->getSession('user_type') !== 'candidato') {
+            $this->redirect('/vagas');
+        }
+
+        if (!$this->isPost()) {
+            $this->redirect('/vagas');
+        }
+
+        $vagaId = $this->getPost('vaga_id');
+        $motivo = $this->getPost('motivo');
+        $descricao = $this->getPost('descricao');
+        $candidatoId = $this->getSession('user_id');
+
+        // Verificar se já denunciou esta vaga
+        if ($this->vagaModel->verificarDenunciaExistente($candidatoId, $vagaId)) {
+            $this->redirect("/vagas/{$vagaId}?error=ja_denunciada");
+        }
+
+        // Validar motivo
+        $motivosValidos = ['conteudo_inadequado', 'informacoes_falsas', 'discriminacao', 'outro'];
+        if (!in_array($motivo, $motivosValidos)) {
+            $this->redirect("/vagas/{$vagaId}?error=motivo_invalido");
+        }
+
+        if ($this->vagaModel->denunciarVaga($candidatoId, $vagaId, $motivo, $descricao)) {
+            $this->redirect("/vagas/{$vagaId}?status=denuncia_sucesso");
+        } else {
+            $this->redirect("/vagas/{$vagaId}?error=erro_denuncia");
+        }
+    }
 } 

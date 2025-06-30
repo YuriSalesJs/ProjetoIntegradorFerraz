@@ -61,4 +61,39 @@ class Vaga extends Model
                 ORDER BY v.data_postagem DESC";
         return $this->db->fetchAll($sql);
     }
+
+    // Métodos para denúncias
+    public function denunciarVaga($candidatoId, $vagaId, $motivo, $descricao = null)
+    {
+        $sql = "INSERT INTO denuncias_vagas (candidato_id, vaga_id, motivo, descricao) 
+                VALUES (?, ?, ?, ?)";
+        return $this->db->execute($sql, [$candidatoId, $vagaId, $motivo, $descricao]);
+    }
+
+    public function verificarDenunciaExistente($candidatoId, $vagaId)
+    {
+        $sql = "SELECT id FROM denuncias_vagas WHERE candidato_id = ? AND vaga_id = ?";
+        return $this->db->fetch($sql, [$candidatoId, $vagaId]);
+    }
+
+    public function getDenunciasVaga($vagaId)
+    {
+        $sql = "SELECT dv.*, c.nome as candidato_nome 
+                FROM denuncias_vagas dv 
+                JOIN cadastro c ON dv.candidato_id = c.id 
+                WHERE dv.vaga_id = ? 
+                ORDER BY dv.data_denuncia DESC";
+        return $this->db->fetchAll($sql, [$vagaId]);
+    }
+
+    public function getTodasDenuncias()
+    {
+        $sql = "SELECT dv.*, c.nome as candidato_nome, v.titulo as vaga_titulo, e.razao_social as empresa_nome
+                FROM denuncias_vagas dv 
+                JOIN cadastro c ON dv.candidato_id = c.id 
+                JOIN vagas v ON dv.vaga_id = v.id 
+                JOIN empresas e ON v.empresa_id = e.id 
+                ORDER BY dv.data_denuncia DESC";
+        return $this->db->fetchAll($sql);
+    }
 } 
