@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Define o caminho base se necessário
+# RewriteBase /ProjetoIntegradorFerraz/public/
+
+# Redireciona todas as requisições para o index.php, exceto arquivos e diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Configurações de segurança
+<Files "*.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule> 

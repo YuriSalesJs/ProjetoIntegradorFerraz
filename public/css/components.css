@@ -1,0 +1,517 @@
+/* ===== CARROSSEL ===== */
+.carousel {
+    margin-bottom: 2rem;
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+}
+
+.carousel-caption h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== ESTATÍSTICAS ===== */
+.estatisticas-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 2rem 0;
+}
+
+.estatistica-item {
+    text-align: center;
+    margin: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.estatistica-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.estatistica-numero {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.estatistica-label {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* ===== CARDS DE VAGAS ===== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card .details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.card .details li {
+    margin-bottom: 0.5rem;
+    color: #666;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.card .details li:last-child {
+    border-bottom: none;
+}
+
+.card .details strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ===== SEÇÃO DE BUSCA ===== */
+.search-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-form .input-group {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-form .form-control {
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.search-form .form-control:focus {
+    box-shadow: none;
+    border-color: #007bff;
+}
+
+.search-form .btn {
+    padding: 1rem 2rem;
+    font-weight: 600;
+}
+
+/* ===== TÍTULOS DE PÁGINA ===== */
+.page-title {
+    text-align: center;
+    margin: 2rem 0;
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* ===== MENSAGENS ===== */
+.alert {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+/* ===== SEM RESULTADOS ===== */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.no-results p {
+    margin-bottom: 1rem;
+}
+
+/* ===== CARDS DE EMPRESAS ===== */
+.empresa-card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.empresa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.empresa-card .empresa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.empresa-card .empresa-badge {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.empresa-card .empresa-info {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.empresa-card .empresa-info li {
+    margin-bottom: 0.5rem;
+    color: #666;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.empresa-card .empresa-info li:last-child {
+    border-bottom: none;
+}
+
+.empresa-card .empresa-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.empresa-card .empresa-descricao {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* ===== DETALHES DA EMPRESA ===== */
+.empresa-detalhes {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.empresa-detalhes .empresa-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.empresa-detalhes .empresa-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.empresa-detalhes .empresa-header .empresa-badge {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.empresa-detalhes .empresa-content {
+    padding: 2rem;
+}
+
+.empresa-detalhes .empresa-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.empresa-detalhes .empresa-info-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.empresa-detalhes .empresa-info-item h5 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.empresa-detalhes .empresa-info-item p {
+    color: #666;
+    margin: 0;
+}
+
+.empresa-detalhes .empresa-descricao {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.empresa-detalhes .empresa-descricao h5 {
+    color: #007bff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* ===== LISTA DE VAGAS DA EMPRESA ===== */
+.vagas-empresa {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.vagas-empresa .vagas-header {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.vagas-empresa .vagas-header h5 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.vagas-empresa .vaga-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.vagas-empresa .vaga-item:hover {
+    background-color: #f8f9fa;
+}
+
+.vagas-empresa .vaga-item:last-child {
+    border-bottom: none;
+}
+
+.vagas-empresa .vaga-item h6 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.vagas-empresa .vaga-item .vaga-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.vagas-empresa .vaga-item .vaga-salario {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.vagas-empresa .vaga-item .vaga-localizacao {
+    color: #007bff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .carousel {
+        max-height: 400px;
+    }
+    
+    .carousel-item img {
+        height: 400px;
+    }
+    
+    .carousel-caption {
+        padding: 1.5rem;
+        width: 95%;
+        bottom: 15px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    
+    .estatisticas-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .estatistica-numero {
+        font-size: 2.5rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .search-form {
+        padding: 0 1rem;
+    }
+    
+    .empresa-detalhes .empresa-header h1 {
+        font-size: 2rem;
+    }
+    
+    .empresa-detalhes .empresa-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .estatisticas-container {
+        padding: 2rem 1rem;
+    }
+    
+    .estatistica-item {
+        padding: 1rem;
+    }
+    
+    .carousel {
+        max-height: 300px;
+    }
+    
+    .carousel-item img {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        padding: 1rem;
+        width: 98%;
+        bottom: 10px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .empresa-detalhes .empresa-header {
+        padding: 1rem;
+    }
+    
+    .empresa-detalhes .empresa-content {
+        padding: 1rem;
+    }
+} 
