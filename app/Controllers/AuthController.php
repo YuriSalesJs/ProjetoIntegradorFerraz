@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use App\Models\Candidato;
 use App\Models\Empresa;
+use App\Models\SocialAuth;
 
 class AuthController extends Controller
 {
     private $candidatoModel;
     private $empresaModel;
+    private $socialAuth;
 
     public function __construct()
     {
         $this->candidatoModel = new Candidato();
         $this->empresaModel = new Empresa();
+        $this->socialAuth = new SocialAuth();
     }
 
     public function login()
@@ -166,5 +169,69 @@ class AuthController extends Controller
     {
         $this->destroySession();
         $this->redirect('/');
+    }
+
+    public function googleAuth()
+    {
+        $authUrl = $this->socialAuth->getGoogleAuthUrl();
+        header('Location: ' . $authUrl);
+        exit;
+    }
+
+    public function linkedinAuth()
+    {
+        $authUrl = $this->socialAuth->getLinkedInAuthUrl();
+        header('Location: ' . $authUrl);
+        exit;
+    }
+
+    public function googleCallback()
+    {
+        $code = $_GET['code'] ?? null;
+        
+        if (!$code) {
+            $this->redirect('/login?error=google_auth_failed');
+        }
+
+        $result = $this->socialAuth->handleGoogleCallback($code);
+        
+        if ($result) {
+            $this->setSession('user_id', $result['user']['id']);
+            $this->setSession('user_type', 'candidato');
+            $this->setSession('user_name', $result['user']['nome']);
+            
+            if ($result['action'] === 'register') {
+                $this->redirect('/?status=social_register_success');
+            } else {
+                $this->redirect('/?status=social_login_success');
+            }
+        } else {
+            $this->redirect('/login?error=google_auth_failed');
+        }
+    }
+
+    public function linkedinCallback()
+    {
+        $code = $_GET['code'] ?? null;
+        
+        if (!$code) {
+            $this->redirect('/login?error=linkedin_auth_failed');
+        }
+
+        $result = $this->socialAuth->handleLinkedInCallback($code);
+        
+        if ($result) {
+            $this->setSession('user_id', $result['user']['id']);
+            $this->setSession('user_type', 'candidato');
+            $this->setSession('user_name', $result['user']['nome']);
+            
+            if ($result['action'] === 'register') {
+                $this->redirect('/?status=social_register_success');
+            } else {
+                $this->redirect('/?status=social_login_success');
+            }
+        } else {
+            $this->redirect('/login?error=linkedin_auth_failed');
+        }
     }
 } 

@@ -18,6 +18,22 @@ class Candidato extends Model
         return $this->db->fetch($sql, [$email]);
     }
 
+    public function buscarPorProvider($provider, $providerId)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE provider = ? AND provider_id = ?";
+        return $this->db->fetch($sql, [$provider, $providerId]);
+    }
+
+    public function buscarPorEmailOuProvider($email, $provider = null, $providerId = null)
+    {
+        if ($provider && $providerId) {
+            $sql = "SELECT * FROM {$this->table} WHERE email = ? OR (provider = ? AND provider_id = ?)";
+            return $this->db->fetch($sql, [$email, $provider, $providerId]);
+        } else {
+            return $this->buscarPorEmail($email);
+        }
+    }
+
     public function getMinhasCandidaturas($candidatoId)
     {
         $sql = "SELECT v.*, v.id as vaga_id, e.razao_social, cv.data_candidatura, cv.status 

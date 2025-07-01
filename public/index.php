@@ -12,6 +12,7 @@ $router = new Router();
 
 // Rota de teste
 $router->get('/test', 'HomeController@test');
+$router->get('/test-footer', 'HomeController@testFooter');
 
 // Rotas da aplicação
 $router->get('/', 'HomeController@index');
@@ -32,12 +33,19 @@ $router->get('/cadastro-empresa', 'AuthController@registerEmpresa');
 $router->post('/cadastro-empresa', 'AuthController@registerEmpresa');
 $router->get('/logout', 'AuthController@logout');
 
+// Rotas de autenticação social
+$router->get('/auth/google', 'AuthController@googleAuth');
+$router->get('/auth/google/callback', 'AuthController@googleCallback');
+$router->get('/auth/linkedin', 'AuthController@linkedinAuth');
+$router->get('/auth/linkedin/callback', 'AuthController@linkedinCallback');
+
 // Rotas de vagas
 $router->get('/vagas', 'VagaController@index');
 $router->get('/vagas/criar', 'VagaController@create');
 $router->post('/vagas/criar', 'VagaController@create');
 $router->post('/vagas/candidatar', 'VagaController@candidatar');
 $router->post('/vagas/desistir', 'VagaController@desistir');
+$router->post('/vagas/denunciar', 'VagaController@denunciar');
 $router->get('/vagas/{id}', 'VagaController@show');
 $router->get('/vagas/{id}/editar', 'VagaController@edit');
 $router->post('/vagas/{id}/editar', 'VagaController@edit');

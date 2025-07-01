@@ -63,6 +63,11 @@ $title = htmlspecialchars($vaga['titulo']) . ' - Ferraz Conecta';
                                     <i class="fas fa-paper-plane"></i> Candidatar-se
                                 </button>
                             </form>
+                            
+                            <!-- Botão de Denúncia -->
+                            <button type="button" class="btn btn-outline-danger w-100 mb-3" data-bs-toggle="modal" data-bs-target="#denunciaModal">
+                                <i class="fas fa-flag"></i> Denunciar Vaga
+                            </button>
                         <?php endif; ?>
                     <?php else: ?>
                         <div class="alert alert-info">
@@ -87,4 +92,83 @@ $title = htmlspecialchars($vaga['titulo']) . ' - Ferraz Conecta';
             </div>
         </div>
     </div>
-</div> 
+</div>
+
+<!-- Modal de Denúncia -->
+<div class="modal fade" id="denunciaModal" tabindex="-1" aria-labelledby="denunciaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="denunciaModalLabel">
+                    <i class="fas fa-flag text-danger"></i> Denunciar Vaga
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="/vagas/denunciar">
+                <div class="modal-body">
+                    <input type="hidden" name="vaga_id" value="<?= $vaga['id'] ?>">
+                    
+                    <div class="mb-3">
+                        <label for="motivo" class="form-label">Motivo da Denúncia *</label>
+                        <select class="form-select" id="motivo" name="motivo" required>
+                            <option value="">Selecione um motivo</option>
+                            <option value="conteudo_inadequado">Conteúdo Inadequado</option>
+                            <option value="informacoes_falsas">Informações Falsas</option>
+                            <option value="discriminacao">Discriminação</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descrição (Opcional)</label>
+                        <textarea class="form-control" id="descricao" name="descricao" rows="4" 
+                                  placeholder="Descreva detalhes sobre a denúncia..."></textarea>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Importante:</strong> Sua denúncia será analisada pela nossa equipe. 
+                        Denúncias falsas podem resultar em suspensão da conta.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-flag"></i> Enviar Denúncia
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Mensagens de Status -->
+<?php if (isset($_GET['status']) && $_GET['status'] === 'denuncia_sucesso'): ?>
+    <div class="alert alert-success alert-dismissible fade show position-fixed" style="top: 20px; right: 20px; z-index: 9999;" role="alert">
+        <i class="fas fa-check-circle"></i>
+        <strong>Sucesso!</strong> Sua denúncia foi enviada e será analisada pela nossa equipe.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_GET['error'])): ?>
+    <?php
+    $errorMessage = '';
+    switch ($_GET['error']) {
+        case 'ja_denunciada':
+            $errorMessage = 'Você já denunciou esta vaga anteriormente.';
+            break;
+        case 'motivo_invalido':
+            $errorMessage = 'Motivo de denúncia inválido.';
+            break;
+        case 'erro_denuncia':
+            $errorMessage = 'Erro ao enviar denúncia. Tente novamente.';
+            break;
+    }
+    ?>
+    <div class="alert alert-danger alert-dismissible fade show position-fixed" style="top: 20px; right: 20px; z-index: 9999;" role="alert">
+        <i class="fas fa-exclamation-triangle"></i>
+        <strong>Erro!</strong> <?= $errorMessage ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?> 

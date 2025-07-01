@@ -17,12 +17,12 @@ $title = 'Login Empresa - Ferraz Conecta';
 
                     <form method="POST" action="/login-empresa">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label required">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="senha" class="form-label">Senha</label>
+                            <label for="senha" class="form-label required">Senha</label>
                             <input type="password" class="form-control" id="senha" name="senha" required>
                         </div>
 

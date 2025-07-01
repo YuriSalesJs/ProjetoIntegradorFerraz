@@ -11,28 +11,28 @@ $title = 'Editar Vaga - Ferraz Conecta';
                         <i class="fas fa-edit text-primary"></i> Editar Vaga
                     </h2>
 
-                    <form method="POST" action="/vagas/<?= $vaga['id'] ?>/editar">
+                    <form method="POST" action="/vagas/editar/<?= $vaga['id'] ?>">
                         <div class="mb-3">
-                            <label for="titulo" class="form-label">Título da Vaga</label>
+                            <label for="titulo" class="form-label required">Título da Vaga</label>
                             <input type="text" class="form-control" id="titulo" name="titulo" 
                                 value="<?= htmlspecialchars($vaga['titulo']) ?>" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="descricao_completa" class="form-label">Descrição Completa</label>
-                            <textarea class="form-control" id="descricao_completa" name="descricao_completa" rows="6" required 
-                                placeholder="Descreva detalhadamente a vaga, responsabilidades, requisitos, benefícios..."><?= htmlspecialchars($vaga['descricao_completa']) ?></textarea>
+                            <label for="descricao_completa" class="form-label required">Descrição Completa</label>
+                            <textarea class="form-control" id="descricao_completa" name="descricao_completa" rows="6" required><?= htmlspecialchars($vaga['descricao_completa']) ?></textarea>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="salario" class="form-label">Salário (R$)</label>
-                                <input type="number" class="form-control" id="salario" name="salario" 
-                                    value="<?= htmlspecialchars($vaga['salario']) ?>" min="0" step="0.01" required>
+                                <label for="salario" class="form-label required">Salário (R$)</label>
+                                <input type="text" class="form-control" id="salario" name="salario" 
+                                    value="<?= htmlspecialchars($vaga['salario']) ?>" required>
+                                <input type="hidden" name="salario_numerico" id="salario_numerico" value="<?= htmlspecialchars($vaga['salario']) ?>">
                             </div>
 
                             <div class="col-md-6 mb-3">
-                                <label for="localizacao" class="form-label">Localização</label>
+                                <label for="localizacao" class="form-label required">Localização</label>
                                 <input type="text" class="form-control" id="localizacao" name="localizacao" 
                                     value="<?= htmlspecialchars($vaga['localizacao']) ?>" required>
                             </div>

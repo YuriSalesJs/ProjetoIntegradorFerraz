@@ -23,7 +23,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="/">Ferraz Conecta</a>
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/img/logobrancanavbar.png" alt="Ferraz Conecta" class="navbar-logo me-2">
+                Ferraz Conecta
+            </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -36,6 +39,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/empresas">Empresas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
                 </ul>
                 
@@ -100,6 +106,12 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Form Validation JS -->
+    <script src="/js/form-validation.js"></script>
+    
+    <!-- Vagas Validation JS -->
+    <script src="/js/vagas-validation.js"></script>
     
     <?php if (isset($extraJS)): ?>
         <?= $extraJS ?>

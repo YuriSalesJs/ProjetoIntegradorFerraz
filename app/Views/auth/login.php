@@ -15,20 +15,38 @@ $title = 'Login - Ferraz Conecta';
                         </div>
                     <?php endif; ?>
 
+                    <!-- Botões de Autenticação Social -->
+                    <div class="mb-4">
+                        <p class="text-center text-muted mb-3">Ou entre com:</p>
+                        <div class="d-grid gap-2">
+                            <a href="/auth/google" class="btn btn-outline-danger">
+                                <i class="fab fa-google me-2"></i>Entrar com Google
+                            </a>
+                            <a href="/auth/linkedin" class="btn btn-outline-primary">
+                                <i class="fab fa-linkedin me-2"></i>Entrar com LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <span class="bg-white px-3 text-muted">ou</span>
+                    </div>
+
                     <form method="POST" action="/login">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label required">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="senha" class="form-label">Senha</label>
+                            <label for="senha" class="form-label required">Senha</label>
                             <input type="password" class="form-control" id="senha" name="senha" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="tipo" class="form-label">Tipo de Conta</label>
-                            <select class="form-select" id="tipo" name="tipo">
+                            <label for="tipo" class="form-label required">Tipo de Conta</label>
+                            <select class="form-select" id="tipo" name="tipo" required>
+                                <option value="">Selecione...</option>
                                 <option value="candidato">Candidato</option>
                                 <option value="empresa">Empresa</option>
                             </select>

@@ -36,6 +36,11 @@ class HomeController extends Controller
         }
     }
 
+    public function testFooter()
+    {
+        return $this->render('home/test_footer');
+    }
+
     public function index()
     {
         try {

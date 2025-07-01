@@ -20,7 +20,7 @@ $title = 'Meu Perfil - Ferraz Conecta';
                     <form method="POST" action="/perfil/atualizar">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="nome" class="form-label">Nome Completo</label>
+                                <label for="nome" class="form-label required">Nome Completo</label>
                                 <input type="text" class="form-control" id="nome" name="nome" 
                                     value="<?= htmlspecialchars($candidato['nome']) ?>" required>
                             </div>
@@ -35,7 +35,7 @@ $title = 'Meu Perfil - Ferraz Conecta';
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="telefone" class="form-label">Telefone</label>
+                                <label for="telefone" class="form-label required">Telefone</label>
                                 <input type="tel" class="form-control" id="telefone" name="telefone" 
                                     value="<?= htmlspecialchars($candidato['telefone']) ?>" required>
                             </div>
@@ -56,7 +56,7 @@ $title = 'Meu Perfil - Ferraz Conecta';
                         </div>
 
                         <div class="mb-3">
-                            <label for="endereco" class="form-label">Endereço</label>
+                            <label for="endereco" class="form-label required">Endereço</label>
                             <textarea class="form-control" id="endereco" name="endereco" rows="3" required><?= htmlspecialchars($candidato['endereco']) ?></textarea>
                         </div>
 

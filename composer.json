@@ -1,14 +1,33 @@
 {
-    "name": "ferraz/conecta",
-    "description": "Sistema de vagas e candidatos para Ferraz de Vasconcelos",
+    "name": "ferraz-conecta/app",
+    "description": "Sistema de vagas para Ferraz de Vasconcelos",
     "type": "project",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-fileinfo": "*"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "^0.2.0"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('config/database.php', 'config/database.php.bak');\"",
+            "php -r \"file_put_contents('config/database.php', str_replace('localhost', getenv('DB_HOST') ?: 'localhost', file_get_contents('config/database.php')));\""
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     },
     "authors": [
         {
