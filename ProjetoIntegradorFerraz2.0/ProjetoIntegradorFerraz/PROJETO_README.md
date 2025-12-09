@@ -1,4 +1,5 @@
 # Ferraz Conecta – Portal de Empregos
+Equipe: Yuri Sales, Felipe Sales, Felipe Schueller e Nayara Bastos. 
 
 ## 📋 Descrição
 
@@ -332,7 +333,7 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 
 ## 📞 Contato e Suporte
 
-- **Desenvolvedor**: Yuri Sales
+- **Desenvolvedores**: Yuri Sales, Felipe Sales, Felipe Schueller e Nayara Bastos. 
 - **GitHub**: [@YuriSalesJs](https://github.com/YuriSalesJs)
 - **Email**: contato@ferrazconecta.com.br
 
